@@ -1,0 +1,190 @@
+
+#main-header {
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: var(--primary);
+}
+
+#desktop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    gap: 1rem;
+}
+
+#desktop-menu a {
+    text-decoration: none;
+    position: relative;
+    color: var(--alternative);
+    transition: all 200ms ease-in-out;
+    font-family: var(--font-main);
+}
+
+#desktop-menu a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+    bottom: -2px;
+    background-color: var(--alternative);
+    transition: all 200ms ease-in-out;
+}
+
+#desktop-menu a:hover::before {
+    width: 100%;
+    transition: 200ms all ease-in-out;
+}
+
+#desktop-menu a:hover {
+    transform: scale(1.1);
+    transition: all 200ms ease-in-out;
+    font-family: var(--font-main);
+}
+
+#actions{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+width: 6rem;
+gap: 1rem;
+padding: 0 1rem ;
+}
+
+#cart,#mobile-menu{
+    display:none
+}
+
+#btn-menu{
+    display: none;
+}
+
+#actions > button{
+    cursor: pointer;
+    background-color: var(--primary);
+    color:var(--alternative);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    box-shadow: rgb(255, 250, 250) .1rem .1rem 0 .1rem;
+    padding: 0.25rem .75rem;
+    border-radius: .2rem;
+    transform: scale(1);
+    transition: all 150ms ease-in-out;
+}
+#actions > button:hover{
+    transform: scale(1.1);
+    box-shadow: transparent .1rem .1rem 0 .1rem;
+}
+
+#cart.active{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 5vh;
+    max-height: 75vh;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.473);
+    border-radius: 0.5rem;
+    z-index: 9
+}
+
+#cart li{
+    display: flex;
+    margin: 0.5rem;
+    background-color: #3333333b;
+    border: 1px solid gray;
+    border-radius: 0.4rem;
+}
+#cart li picture{
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    aspect-ratio: 1 / 1;
+    align-self: center;
+    margin-right: 1rem ;
+}
+#cart li img{
+    width: 100%;
+    height: 100%;
+    margin-left: 0.5rem;
+    object-fit: contain;
+}
+#cart li dl{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: .25rem;
+}
+#cart li > fieldset{
+    flex: 1;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#cart li > fieldset button{
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    color:var(--alternative);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#cart li > fieldset output{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cart::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    #desktop-menu{
+        display: none;
+    }
+    #actions{
+        flex: 1;
+        justify-content: flex-end;
+    }
+    #btn-menu{
+        display:flex;
+    }
+
+    #mobile-menu.active{
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: calc(5vh + 2rem);
+        max-height: 75vh;
+        overflow: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        flex-direction: column;
+        background-color: var(--alternative);
+        z-index: 9;
+        padding: 2rem 1rem ;
+        gap: 1rem;
+    }
+    #mobile-menu a{
+        background-color: var(--primary);
+        color:var(--alternative);
+        padding: 1rem 2rem ;
+        text-align: center;
+    }
+}

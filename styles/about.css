@@ -1,0 +1,160 @@
+#about-mazebank {
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    gap: 70px;
+    padding: 40px 0;
+    cursor: default;
+}
+
+#card-aboutmb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#card-aboutmb h1 {
+    color: var(--primary);
+    text-shadow: 2px 2px 1px black;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+#card-aboutmb p {
+    width: 70%;
+    text-align: justify;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px rgb(53, 53, 53);
+    padding: 8px;
+}
+
+#card-goaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#card-goaction h1 {
+    color: var(--primary);
+    text-shadow: 2px 2px 1px black;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+#card-goaction nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 70px;
+}
+
+#card-goaction nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-family: var(--font-main);
+}
+
+#card-goaction nav a:nth-child(1) {
+    background-color: #ce3031;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-15deg) scale(1);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 150ms ease-in-out;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#card-goaction nav a:nth-child(1):hover {
+    color: var(--primary);
+    transition: all 150ms ease-in-out;
+}
+
+#card-goaction nav a:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 150ms ease-in-out;
+}
+
+
+#card-goaction nav a:nth-child(1):hover::before {
+    width: 100%;
+    transition: all 150ms ease-in-out;
+}
+
+#card-goaction nav a:nth-child(2) {
+    color: #ce3031;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(-15deg) scale(1);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 150ms ease-in-out;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#card-goaction nav a:nth-child(2):hover {
+    color: #ce3031;
+    transition: all 150ms ease-in-out;
+}
+
+#card-goaction nav a:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background-color: white;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 150ms ease-in-out;
+}
+
+#card-goaction nav a:nth-child(2):hover::before {
+    width: 100%;
+    transition: all 150ms ease-in-out;
+}

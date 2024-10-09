@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #ce3031;
+    --text: #ecf0ef;
+}
+
+::selection {
+    background-color: var(--background);
+}
+
+body {
+    background-color: #e5e5e5;
+    background-image:repeating-radial-gradient(
+        circle at 20% 20%,transparent 0,#e5e5e5 23px),
+        repeating-linear-gradient(
+            #b9b9b955,#b9b9b9
+            );
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Moderustic";
+    cursor: default;
+}
+
+main {
+    background-color: #ce3030ef;
+    padding: 30px 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 75px;
+}
+
+main h1 {
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    text-shadow: 2px 2px 1px black;
+    color: var(--text);
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset input {
+    padding: 10px 7px;
+    width: 285px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-bottom: 4px solid white;
+    color: rgb(0, 0, 0);
+    font-family: "Moderustic";
+    position: relative;
+}
+
+input:focus {
+    outline: none;
+}
+
+#labelUser {
+    position: absolute;
+    transform: translateX(-115px) translateY(-33px);
+    color: snow;
+    text-shadow: 2px 2px 1px black;
+    text-transform: uppercase;
+}
+
+#labelPassword {
+    position: absolute;
+    transform: translateX(-95px) translateY(-33px);
+    color: snow;
+    text-shadow: 2px 2px 1px black;
+    text-transform: uppercase;
+}
+
+#forgotPassword {
+    position: absolute;
+    transform: translateX(80px) translateY(-35px);
+    font-size: .95rem;
+    text-decoration: none;
+    color: white;
+    transition: all 100ms ease-in-out;
+}
+
+#forgotPassword::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    bottom: -1px;
+    transition: all 100ms ease-in-out;
+}
+
+#forgotPassword:hover::before {
+    width: 100%;
+    transition: all 100ms ease-in-out;
+}
+
+button {
+    background-color: var(--text);
+    padding: 10px 30px;
+    font-size: 1.3rem;
+    font-family: "Moderustic";
+    text-transform: uppercase;
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    transition: all 200ms ease-in-out;
+    z-index: 1;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+button::before {
+    content:"";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--background);
+    left: 0;
+    border-radius: 4px;
+    top: 0;
+    transition: all 150ms ease-in-out;
+}
+
+button:hover {
+    color:var(--text);
+    transform: scale(1.05);
+    transition: all 150ms ease-in-out;
+}
+
+button:hover::before {
+    width: 100%;
+    transform: scale(1.05);
+    transition: all 150ms ease-in-out;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    position: relative;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--text);
+    bottom: -2px;
+    transition: all 200ms ease-in-out;
+}
+
+nav a:hover::before {
+    width: 100%;
+    transition: all 200ms ease-in-out;
+}
+
+span {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+span img {
+    width: 300px;
+}
+
+svg {
+    position: absolute;
+    transform: translateX(115px);
+}

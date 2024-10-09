@@ -1,0 +1,121 @@
+#hero-container {
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+    height: calc(100vh - 2.5rem);
+    margin-top: 2.5rem;
+    cursor: default;
+    border-bottom: .2rem solid black;
+}
+
+#leftside-hero {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    z-index: 3;
+    color: var(--alternative);
+    background-color: #c5c5c5b0;
+    border-right: .2rem solid black;
+    gap: 1.5rem;
+}
+
+#leftside-hero picture{
+    width: 75%;
+    filter: drop-shadow(.2rem .2rem .2rem black);
+}
+#leftside-hero picture img{
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+
+#leftside-hero p {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    opacity: .8;
+    color: black;
+    font-weight: 500;
+    text-shadow: .1rem .1rem .1rem rgba(48, 48, 48, 0.75);
+    font-family: var(--text-main);
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+#leftside-hero a {
+    background-color: var(--primary);
+    border: .1rem solid var(--primary);
+    border-radius: .25rem;
+    padding: 1rem 1.75rem;
+    box-shadow: rgba(52, 52, 52, 0.7) .25rem .25rem .2rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    color: var(--alternative);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: var(--text-main);
+    font-weight: 700;
+}
+
+#leftside-hero a:hover {
+    background-color: var(--alternative);
+    border-color: var(--alternative);
+    color:var(--primary);
+    box-shadow: rgba(52, 52, 52, 0.7) .25rem .25rem .2rem;
+    transform: scale(1.1);
+    transition: all 200ms ease-in-out;
+}
+
+
+#rightside-hero {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#rightside-hero>picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+}
+
+#rightside-hero>picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1280px) {
+    #rightside-hero{
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    #leftside-hero{
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        border: none;
+        padding: 1rem 2rem;
+        z-index: 1;
+    }
+
+    #hero-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(75vh + 4rem);
+    }
+}
