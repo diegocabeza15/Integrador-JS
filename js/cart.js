@@ -1,28 +1,33 @@
-import {getOne} from './product.js'
+import { getOne } from "./product.js";
 
 let cart = JSON.parse(localStorage.getItem('carrito')) || []
 
-const agregarProducto = (product={}) => {
-    if(cart.length == 0){
-        cart.push({product,quantity:1})
-        localStorage.setItem('carrito',JSON.stringify(cart))
-        return renderCart()
+const agregarProducto = (product = {}) => {
+    let cart = JSON.parse(localStorage.getItem("carrito")) || [];
+  
+    if (cart.length == 0) {
+      cart.push({ product, quantity: 1 });
+      localStorage.setItem('carrito', JSON.stringify(cart));
+      return renderCart();
     }
-    let exist = cart.some((item) => item.product.id == product.id)
-    if(!exist){
-        cart.push({product,quantity:1})
-        localStorage.setItem('carrito',JSON.stringify(cart))
-        return renderCart()
+  
+    let exist = cart.some((item) => item.product.id == product.id);
+    if (!exist) {
+      cart.push({ product, quantity: 1 });
+      localStorage.setItem('carrito', JSON.stringify(cart));
+      return renderCart();
     }
+  
     cart = cart.map((item) => {
-        if(item.product.id == product.id){
-            item.quantity += 1      
-        }
-        return item
-    })
-    localStorage.setItem('carrito',JSON.stringify(cart))
-    return renderCart()
-}
+      if (item.product.id == product.id) {
+        item.quantity += 1;
+      }
+      return item;
+    });
+  
+    localStorage.setItem('carrito', JSON.stringify(cart));
+    return renderCart();
+  };
 
 const templateItem = ({product,quantity}) => {
     const {id,name,description,price,image,category} = product
@@ -37,7 +42,7 @@ const templateItem = ({product,quantity}) => {
         }) 
         return formatter.format(value)
       }
-      const priceFormat = format({currency:"USD",value:price * quantity})
+        const priceFormat = format({currency:"USD",value:price * quantity})
     element.innerHTML = `
         <picture><img src="${image}" alt="Imagen del ${name}"></picture>
         <dl>
@@ -77,6 +82,7 @@ const templateItem = ({product,quantity}) => {
         cart = cart.map((item) => {
             if(item.product.id == product.id){
                 item.quantity -= 1      
+                localStorage.removeItem('carrito',JSON.stringify(cart))
             }
             return item
         }).filter(({quantity}) => quantity > 0)
@@ -98,4 +104,4 @@ const renderCart = () => {
     cart.sort((a,b) => a.id < b.id).forEach(item =>cartElement.appendChild(templateItem(item)));
 }
 
-export {agregarProducto,renderCart}
+export { agregarProducto, renderCart };

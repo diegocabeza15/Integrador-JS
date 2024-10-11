@@ -21,7 +21,6 @@
 html{
     overflow: auto;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
     scrollbar-width: none;
     scroll-padding-top: 2rem;
 }
